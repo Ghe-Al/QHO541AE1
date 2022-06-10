@@ -1,0 +1,35 @@
+﻿@page
+@model Full_stack_application.Pages.booklist.createModel
+@{
+}
+<br />
+<h2 class="text-info">Create Todo</h2>
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="info.Content"></label>
+            </div>
+            <div class="col-6">
+                <textarea asp-for="info.Content" class="form-control" ></textarea>
+            </div>
+            <span asp-validation-for="info.Content" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Create" class="btn btn-primary form-control" />
+            </div>
+
+            <div class="col-3">
+                <a asp-page="/Index" class="btn btn-success form-control">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
